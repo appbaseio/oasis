@@ -14,22 +14,35 @@ class Main extends Component {
       this.state = {
       	inputState: null,
       	mapping: null,
-        connecting: false,
-        selectedPlugin: 'gem'
+        connecting: false
       };
       this.pluginList = {
-        'gem': 'http://opensource.appbase.io/gem/',
-        // 'gem': 'http://127.0.0.1:8000',
-        'dejavu': 'http://opensource.appbase.io/dejavu/live/',
-        'mirage': 'http://opensource.appbase.io/mirage/'
+        'gem': 'https://opensource.appbase.io/gem/',
+        'dejavu': 'https://opensource.appbase.io/dejavu/live/',
+        'mirage': 'https://opensource.appbase.io/mirage/'
       }
       this.getMapping = this.getMapping.bind(this);
       this.setField = this.setField.bind(this);
       this.disconnect = this.disconnect.bind(this);
       this.selectPlugin = this.selectPlugin.bind(this);
   }
-  componentWillMount() {
+  componentDidMount() {
   	this.getInputState();
+    let queryParam = this.getQueryParameters();
+    let selectedPlugin = queryParam && queryParam.plugin ? queryParam.plugin : 'gem';
+    this.setState({
+      selectedPlugin: selectedPlugin
+    }, function() {
+      dataOperation.selectPlugin(selectedPlugin);
+    });
+  }
+  getQueryParameters(str) {
+      let hash = window.location.hash.split('#');
+      if(hash.length > 1) {
+        return (str || hash[1]).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+      } else {
+        return null;
+      }
   }
   getInputState() {
     let localConfig = dataOperation.getLocalConfig();
@@ -109,6 +122,7 @@ class Main extends Component {
     this.setState({
       selectedPlugin: pluginName
     });
+    dataOperation.selectPlugin(pluginName);
   }
   afterConnectContainer() {
     let res;

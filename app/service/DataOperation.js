@@ -146,7 +146,9 @@ class DataOperation {
           return null;
       }
     }
-
+  selectPlugin(pluginName) {
+    urlShare.setPlugin(pluginName);
+  }
 }
 
 export const dataOperation = new DataOperation();

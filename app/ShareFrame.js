@@ -13,7 +13,13 @@ export class ShareFrame extends Component {
   }
   generateUrl() {
     let prefix = this.props.pluginList[this.props.selectedPlugin];
-    return prefix+'#?input_state='+urlShare.url+'&hf=false';
+    let url = prefix+'#?input_state='+urlShare.url+'&hf=false';
+    if(urlShare.url == '') {
+      setTimeout(() => {this.setState({check: true})}, 1500); 
+      return;
+    } else {
+      return url;
+    }
   }
   iframeAttr() {
     return {

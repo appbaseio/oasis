@@ -4,6 +4,7 @@ class UrlShare {
 		this.decryptedData = {};
 		this.inputs = {};
 		this.url = '';
+		this.selectedPlugin = 'gem';
 	}
 	getInputs() {
 		return this.inputs;
@@ -11,6 +12,12 @@ class UrlShare {
 	setInputs(inputs) {
 		this.inputs = inputs;
 		this.createUrl();
+	}
+	setPlugin(plugin) {
+		this.selectedPlugin = plugin;
+		if(this.inputs && this.inputs.url) {
+			this.createUrl();
+		}
 	}
 	createUrl() {
 		var inputs = JSON.parse(JSON.stringify(this.inputs));
@@ -24,15 +31,17 @@ class UrlShare {
 			if (window.location.href.indexOf('#?default=true') > -1) {
 				window.location.href = window.location.href.split('?default=true')[0];
 			}
-			window.location.href = '#?input_state=' + ciphertext;
+			this.queryParams = this.getQueryParameters();
+			let finalUrl = '#?input_state=' + ciphertext;
+            finalUrl += '&plugin='+this.selectedPlugin
+            window.location.href = finalUrl;
 		}
 	}
 	decryptUrl(cb) {
 		return new Promise((resolve, reject) => {
-			var url = window.location.href.split('#?input_state=');
-			this.url = url[1];
-			if (url.length > 1) {
-				this.decompress(url[1], function(error, data) {
+			this.queryParams = this.getQueryParameters();
+	        if (this.queryParams.input_state) {
+	        this.decompress(this.queryParams.input_state, function(error, data) {
 					resolve({ error: error, data: data });
 				});
 			} else {
@@ -133,6 +142,14 @@ class UrlShare {
 				break;
 			}
 		});
+	}
+	getQueryParameters(str) {
+	    let hash = window.location.hash.split('#');
+	    if(hash.length > 1) {
+	      return (str || hash[1]).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+	    } else {
+	      return null;
+	    }
 	}
 }
 export const urlShare = new UrlShare();
