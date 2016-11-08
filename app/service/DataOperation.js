@@ -77,6 +77,8 @@ class DataOperation {
       storageService.set('gem-appname', inputState.appname);
       storageService.set('gem-url', inputState.url);
       urlShare.setInputs(inputState);
+    } else {
+      urlShare.url = '';
     }
   }
   // update mapping state

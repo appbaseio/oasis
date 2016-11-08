@@ -154,6 +154,8 @@ class Main extends Component {
                 getMapping = {this.getMapping}
                 mappings = {this.state.mappings}
                 disconnect = {this.disconnect} 
+                selectedPlugin={this.state.selectedPlugin}
+                pluginList={this.pluginList}
               />
               {this.afterConnectContainer()}
             </div>

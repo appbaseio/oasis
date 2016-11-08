@@ -18,6 +18,7 @@ export class ShareFrame extends Component {
       setTimeout(() => {this.setState({check: true})}, 1500); 
       return;
     } else {
+      console.log(urlShare.url);
       return url;
     }
   }

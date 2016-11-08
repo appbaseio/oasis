@@ -79,7 +79,9 @@ export class AppLogin extends Component {
     <form className="col-xs-12 init-ES" id="init-ES">
       <div className="esContainer">
         <span className="action-btns hidden-xs">
-          <GemLink />
+          <GemLink 
+            selectedPlugin={this.props.selectedPlugin}
+            pluginList={this.props.pluginList} />
         </span>
         <div className="form-group m-0 col-xs-4 pd-0 pr-5">
           <AppSelect 

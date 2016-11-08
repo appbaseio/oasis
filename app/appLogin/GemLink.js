@@ -17,7 +17,9 @@ export class GemLink extends Component {
     }).catch((error) => console.log(error));
   }
   applyUrl(url) {
-    this.setState({url: url, copied: ''});
+    let prefix = this.props.pluginList[this.props.selectedPlugin];
+    let finalUrl = prefix+'#?input_state='+urlShare.url;
+    this.setState({url: finalUrl, copied: ''});
     setTimeout(function() {
       var ele = document.getElementById('for-share');
       var succeed = this.copyToClipboard(ele);
