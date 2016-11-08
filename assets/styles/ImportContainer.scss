@@ -1,0 +1,69 @@
+@import "variables.scss";
+#ImportContainer {
+	margin: 0;
+	height: 100%;
+	overflow: auto;
+	padding: 15px;
+	.JsonImport, .ImportResult {
+		height: 100%;
+		padding-top: 67px;
+		position: relative;
+		padding-left: 0;
+		padding-right: 0;
+		border: 1px solid darken($bg, 5%); 
+		.ReactCodeMirror {
+			height: 100%;
+			.CodeMirror {
+				height: 100%;
+			}
+		}
+		.json-header {
+			position: absolute;
+			padding: 15px;
+			width: 100%;
+			top: 0;
+			left: 0;
+			border-bottom: 1px solid darken($bg, 5%);
+			background: $bg;
+			.title {
+				margin: 0;
+				padding-bottom: 10px;
+				float: left;
+			    width: 100%;
+			    height: 36px;
+				.extra-options {
+					font-size: 14px;
+					.select2-container {
+						min-width: 200px;
+					}
+				}
+				@media screen and (max-width: 768px) { 
+					font-size: 18px;
+					.extra-options {
+						.select2-container {
+							min-width: 150px !important;
+							width: 150px !important;
+						}
+					}
+				}
+			}
+			&.success {
+				background: rgba(82,199,130,.2);
+			}
+			&.error {
+				background: rgba(226,91,25,.2);
+			}
+		}
+	}
+	.JsonImport {
+		border-right: 0; 
+	}
+	@media screen and (max-width: 768px) {
+		.ImportResult {
+			margin-top: 15px;
+		}	
+		.JsonImport {
+			border-right: 1px solid darken($bg, 5%); 
+		}			
+	}
+}
