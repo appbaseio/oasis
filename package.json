@@ -1,11 +1,11 @@
 {
-  "name": "gem",
+  "name": "flash",
   "version": "0.0.1",
-  "description": "gem",
+  "description": "Es plugins",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack-server": "webpack-dev-server --hot --inline --progress --colors --port 8000",
+    "webpack-server": "webpack-dev-server --hot --inline --progress --colors --port 8031",
     "web-server": "http-server -p 3000 .",
     "start": "concurrently \"npm run webpack-server\" \"gulp watch\"",
     "build": "set NODE_ENV=production&& webpack -p && gulp"

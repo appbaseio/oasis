@@ -19,6 +19,7 @@ class Main extends Component {
       };
       this.pluginList = {
         'gem': 'http://opensource.appbase.io/gem/',
+        // 'gem': 'http://127.0.0.1:8000',
         'dejavu': 'http://opensource.appbase.io/dejavu/live/',
         'mirage': 'http://opensource.appbase.io/mirage/'
       }

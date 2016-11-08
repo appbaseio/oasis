@@ -13,7 +13,7 @@ export class ShareFrame extends Component {
   }
   generateUrl() {
     let prefix = this.props.pluginList[this.props.selectedPlugin];
-    return prefix+'#?input_state='+urlShare.url;
+    return prefix+'#?input_state='+urlShare.url+'&hf=false';
   }
   iframeAttr() {
     return {
