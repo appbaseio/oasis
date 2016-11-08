@@ -1,0 +1,51 @@
+#ImportContainer {
+  margin: 0;
+  height: 100%;
+  overflow: auto;
+  padding: 15px; }
+  #ImportContainer .JsonImport, #ImportContainer .ImportResult {
+    height: 100%;
+    padding-top: 67px;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    border: 1px solid #eaeaea; }
+    #ImportContainer .JsonImport .ReactCodeMirror, #ImportContainer .ImportResult .ReactCodeMirror {
+      height: 100%; }
+      #ImportContainer .JsonImport .ReactCodeMirror .CodeMirror, #ImportContainer .ImportResult .ReactCodeMirror .CodeMirror {
+        height: 100%; }
+    #ImportContainer .JsonImport .json-header, #ImportContainer .ImportResult .json-header {
+      position: absolute;
+      padding: 15px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      border-bottom: 1px solid #eaeaea;
+      background: #f7f7f7; }
+      #ImportContainer .JsonImport .json-header .title, #ImportContainer .ImportResult .json-header .title {
+        margin: 0;
+        padding-bottom: 10px;
+        float: left;
+        width: 100%;
+        height: 36px; }
+        #ImportContainer .JsonImport .json-header .title .extra-options, #ImportContainer .ImportResult .json-header .title .extra-options {
+          font-size: 14px; }
+          #ImportContainer .JsonImport .json-header .title .extra-options .select2-container, #ImportContainer .ImportResult .json-header .title .extra-options .select2-container {
+            min-width: 200px; }
+        @media screen and (max-width: 768px) {
+          #ImportContainer .JsonImport .json-header .title, #ImportContainer .ImportResult .json-header .title {
+            font-size: 18px; }
+            #ImportContainer .JsonImport .json-header .title .extra-options .select2-container, #ImportContainer .ImportResult .json-header .title .extra-options .select2-container {
+              min-width: 150px !important;
+              width: 150px !important; } }
+      #ImportContainer .JsonImport .json-header.success, #ImportContainer .ImportResult .json-header.success {
+        background: rgba(82, 199, 130, 0.2); }
+      #ImportContainer .JsonImport .json-header.error, #ImportContainer .ImportResult .json-header.error {
+        background: rgba(226, 91, 25, 0.2); }
+  #ImportContainer .JsonImport {
+    border-right: 0; }
+  @media screen and (max-width: 768px) {
+    #ImportContainer .ImportResult {
+      margin-top: 15px; }
+    #ImportContainer .JsonImport {
+      border-right: 1px solid #eaeaea; } }

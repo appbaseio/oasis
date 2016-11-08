@@ -4,8 +4,6 @@ app/sampleMapping.json
 _site
 temp
 site
-assets/css
 *.log
-dist
 temp
 npm-debug.log.*

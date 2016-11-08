@@ -1,0 +1,17 @@
+.mappingContainer {
+  position: relative;
+  height: 100%;
+  padding: 15px;
+  padding-top: 63px; }
+
+.iframeSrc {
+  border: 1px solid #eee; }
+
+.modal .modal-body {
+  padding-bottom: 50px; }
+
+.jsonPopover {
+  max-width: 300px;
+  min-width: 300px; }
+  .jsonPopover pre {
+    padding: 0; }
