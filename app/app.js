@@ -19,8 +19,7 @@ class Main extends Component {
       this.pluginList = {
         'gem': {
           icon: 'G',
-          // url: 'https://opensource.appbase.io/gem/',
-          url: 'http://127.0.0.1:8000',
+          url: 'https://opensource.appbase.io/gem/',
           text: 'GUI for Elasticsearch Mappings',
           tooltip: 'GUI for Mappings'
         },
