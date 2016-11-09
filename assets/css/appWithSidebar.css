@@ -10,9 +10,9 @@
     top: 0;
     height: 100%;
     width: 50px;
-    position: fixed;
     z-index: 9;
-    background: #eaeaea; }
+    background: #eaeaea;
+    border-right: 2px solid #ccc; }
     .app-with-sidebar-container .app-sidebar ul {
       list-style: none;
       padding: 0; }
