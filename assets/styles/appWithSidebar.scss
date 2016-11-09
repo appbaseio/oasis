@@ -11,9 +11,9 @@
 		top: 0;
 		height: 100%;
 		width: 50px;
-		position: fixed;
 		z-index: 9;
 		background: $dark-bg;
+		border-right: 2px solid #ccc;
 		ul {
 			list-style: none;
 			padding: 0;
