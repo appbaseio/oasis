@@ -95,9 +95,20 @@ footer {
 	.img-container {
 		margin-top: 10px;
 		margin-bottom: 10px;
+		height: 38px;
+		.img-responsive-container {
+			max-width: 100px;
+		}
 		img {
 			max-width: 100px;
 			margin: 0 auto;
+			&.dejavu {
+				max-width: 45px;
+			}
+			&.mirage {
+				max-width: 150px;
+				padding-top: 15px;
+			}
 		}
 	}
 	.tag-line {

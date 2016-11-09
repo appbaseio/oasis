@@ -11,10 +11,10 @@ export class Header extends Component {
     return (
     <header className="header text-center">
       <div className="img-container">
-        <img src="assets/images/logo.png" alt="Gem" className="img-responsive"/>
+        <img src={"assets/images/"+this.props.selectedPlugin+"/logo.png"} alt="Gem" className={"img-responsive "+this.props.selectedPlugin} />
       </div>
       <div className="tag-line">
-        Elasticsearch Plugins
+        {this.props.pluginList[this.props.selectedPlugin].text}
       </div>
       <SubscribeModal selectedPlugin={this.props.selectedPlugin} />
     </header> 
