@@ -18,16 +18,22 @@ class Main extends Component {
       };
       this.pluginList = {
         'gem': {
+          icon: 'G',
           url: 'https://opensource.appbase.io/gem/',
-          text: 'GUI for Elasticsearch Mappings'
+          text: 'GUI for Elasticsearch Mappings',
+          tooltip: 'GUI for Mappings'
         },
         'dejavu': {
+          icon: 'D',
           url: 'https://opensource.appbase.io/dejavu/live/',
-          text: 'The Missing Web UI for Elasticsearch'
+          text: 'The Missing Web UI for Elasticsearch',
+          tooltip: 'GUI for Data view'
         },
         'mirage': {
+          icon: 'M',
           url: 'https://opensource.appbase.io/mirage/',
-          text: 'GUI for Elasticsearch Queries'
+          text: 'GUI for Elasticsearch Queries',
+          tooltip: 'GUI for Queries'
         }
       };
       this.getMapping = this.getMapping.bind(this);
@@ -155,7 +161,8 @@ class Main extends Component {
           <div className="app-with-sidebar-container container-fluid">
             <Sidebar 
               selectPlugin={this.selectPlugin} 
-              selectedPlugin={this.state.selectedPlugin} />
+              selectedPlugin={this.state.selectedPlugin}
+              pluginList={this.pluginList} />
     	      <div className="app-main-container">
               <AppLogin 
                 appsList = {this.state.appsList} 
