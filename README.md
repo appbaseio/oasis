@@ -5,8 +5,8 @@
 
 #### Local Installation
 
-1. git clone https://github.com/appbaseio/oasis
-2. git checkout dev
+1. git clone https://github.com/appbaseio/oasis.git
+2. git checkout master
 3. npm install
 4. bower install
 5. npm start (runs dejavu on http://localhost:8031)
