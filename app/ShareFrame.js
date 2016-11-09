@@ -12,7 +12,7 @@ export class ShareFrame extends Component {
   componentWillMount() {
   }
   generateUrl() {
-    let prefix = this.props.pluginList[this.props.selectedPlugin];
+    let prefix = this.props.pluginList[this.props.selectedPlugin].url;
     let url = prefix+'#?input_state='+urlShare.url+'&hf=false';
     if(urlShare.url == '') {
       setTimeout(() => {this.setState({check: true})}, 1500); 

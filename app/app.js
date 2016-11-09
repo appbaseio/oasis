@@ -17,10 +17,19 @@ class Main extends Component {
         connecting: false
       };
       this.pluginList = {
-        'gem': 'https://opensource.appbase.io/gem/',
-        'dejavu': 'https://opensource.appbase.io/dejavu/live/',
-        'mirage': 'https://opensource.appbase.io/mirage/'
-      }
+        'gem': {
+          url: 'https://opensource.appbase.io/gem/',
+          text: 'GUI for Elasticsearch Mappings'
+        },
+        'dejavu': {
+          url: 'https://opensource.appbase.io/dejavu/live/',
+          text: 'The Missing Web UI for Elasticsearch'
+        },
+        'mirage': {
+          url: 'https://opensource.appbase.io/mirage/',
+          text: 'GUI for Elasticsearch Queries'
+        }
+      };
       this.getMapping = this.getMapping.bind(this);
       this.setField = this.setField.bind(this);
       this.disconnect = this.disconnect.bind(this);
@@ -142,7 +151,7 @@ class Main extends Component {
   	if(this.state.inputState) {
   		appContainer = (
         <div className="container-fluid app-container">
-  	      <Header selectedPlugin={this.state.selectedPlugin} />
+  	      <Header selectedPlugin={this.state.selectedPlugin} pluginList={this.pluginList} />
           <div className="app-with-sidebar-container container-fluid">
             <Sidebar 
               selectPlugin={this.selectPlugin} 
