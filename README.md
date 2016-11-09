@@ -1,7 +1,18 @@
-# GEM 
+# Oasis 
 
-### GUI for Elasticsearch Mappings
+### Combination of elasticsearch plugins
 
-![GEM banner image](http://i.imgur.com/OjNdc5p.png)
 
-A GUI for creating Elasticsearch data type mappings.
+#### Local Installation
+
+1. git clone https://github.com/appbaseio/oasis
+2. git checkout dev
+3. npm install
+4. bower install
+5. npm start (runs dejavu on http://localhost:8031)
+
+#### `gh-pages` branch: Github hosted pages
+
+```sh
+$ npm run build
+```
