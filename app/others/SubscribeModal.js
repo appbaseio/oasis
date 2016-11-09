@@ -15,7 +15,7 @@ export class SubscribeModal extends Component {
     this.options = {
       option1: {
         value: 'major',
-        text: 'New GEM releases'
+        text: 'New oasis releases'
       },
       option2: {
         value: 'all',
@@ -51,7 +51,7 @@ export class SubscribeModal extends Component {
     }
   }
   subscribe() {
-    authOperation.login(this.state.subscribeOption, this.props.selectedPlugin);
+    authOperation.login(this.state.subscribeOption, 'oasis');
   }
   subscribeOptionChange(value) {
     this.setState({
@@ -69,7 +69,6 @@ export class SubscribeModal extends Component {
     this.options.option1.text = 'New '+this.props.selectedPlugin+' releases';
   }
   render() {
-    this.setOptionText();
     return (
       <div>
         <a title="Subscribe to updates" className="subscribe" href="javascript:void;" onClick={() => this.open()}>

@@ -6,7 +6,7 @@ export class Footer extends Component {
     super(props);
   }
   setIframeSrc() {
-    return "https://ghbtns.com/github-btn.html?user=appbaseio&repo="+this.props.selectedPlugin+"&type=star&count=true";
+    return "https://ghbtns.com/github-btn.html?user=appbaseio&repo=oasis&type=star&count=true";
   }
   render() {
     return (
